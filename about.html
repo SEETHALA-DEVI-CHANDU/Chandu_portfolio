@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Seethala Devi Chandu</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+    <div class="background-shape shape1"></div>
+    <div class="background-shape shape2"></div>
+
+    <header class="header visible">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">SDC.</a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="certificates.html" class="nav-link">Certificates</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn magnetic-element">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="page-container visible">
+        <h1 class="page-title gradient-text">About Me</h1>
+        <div class="about-content">
+            <div class="neural-card-wrapper reveal-on-scroll">
+                <div class="card">
+                    <h3><i class="fas fa-user-tie"></i> Professional Summary</h3>
+                    <p>Multi-Agent AI System Developer specializing in LangChain & LangGraph frameworks for Responsible AI compliance automation. I architect sophisticated multi-agent systems integrating Azure OpenAI & Llama LLMs to streamline RAI governance workflows.</p>
+                    <p>As a Computer Science and Engineering student at SRM University, I have a strong foundation in programming and engineering methods, complemented by practical experience through internships and a portfolio of web and AI projects.</p>
+                </div>
+            </div>
+
+            <div class="neural-card-wrapper reveal-on-scroll">
+                <div class="card">
+                    <h3><i class="fas fa-tasks"></i> Key Achievements & Impact</h3>
+                    <p>My work includes developing intelligent agents for automated impact assessment, compliance verification, and SOW validation. This has reduced manual compliance efforts by 80%, enhanced assessment accuracy, and streamlined questionnaire workflows from weeks to hours.</p>
+                </div>
+            </div>
+
+            <div class="neural-card-wrapper reveal-on-scroll">
+                <div class="card">
+                     <h3><i class="fas fa-cogs"></i> Core Technologies</h3>
+                     <div class="skills-list" style="margin-top: 15px;">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">Azure OpenAI</span>
+                        <span class="skill-tag">Llama</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Agentic AI</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">EU AI ACT</span>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script src="background.js"></script>
+</body>
+</html>

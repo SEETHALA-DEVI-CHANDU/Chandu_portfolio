@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Seethala Devi Chandu</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+    <div class="background-shape shape1"></div>
+    <div class="background-shape shape2"></div>
+
+    <header class="header visible">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">SDC.</a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="skills.html" class="nav-link active">Skills</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="certificates.html" class="nav-link">Certificates</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn magnetic-element">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="page-container visible">
+        <h1 class="page-title gradient-text">Technical Skills</h1>
+        
+        <div class="skill-pods-container">
+            
+            <div class="skill-pod reveal-on-scroll">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li><i class="fab fa-python skill-icon"></i> Python & PySpark</li>
+                    <li><i class="fab fa-js-square skill-icon"></i> JavaScript</li>
+                    <li><i class="fas fa-code skill-icon"></i> C & C++</li>
+                </ul>
+            </div>
+
+            <div class="skill-pod reveal-on-scroll">
+                <h3>AI/ML Frameworks</h3>
+                <ul>
+                    <li><i class="fas fa-robot skill-icon"></i> LangChain & LangGraph</li>
+                    <li><i class="fab fa-google skill-icon"></i> Google Gemini & Vertex AI</li>
+                    <li><i class="fas fa-brain skill-icon"></i> Scikit-learn</li>
+                </ul>
+            </div>
+
+            <div class="skill-pod reveal-on-scroll">
+                <h3>Big Data Technologies</h3>
+                <ul>
+                    <li><i class="fas fa-server skill-icon"></i> Spark, Hive, & Kafka</li>
+                    <li><i class="fas fa-database skill-icon"></i> Azure Databricks</li>
+                    <li><i class="fas fa-layer-group skill-icon"></i> Data Lakes</li>
+                </ul>
+            </div>
+
+            <div class="skill-pod reveal-on-scroll">
+                <h3>Databases</h3>
+                <ul>
+                    <li><i class="fas fa-leaf skill-icon"></i> MongoDB</li>
+                    <li><i class="fas fa-fire skill-icon"></i> Firebase</li>
+                    <li><i class="fas fa-table skill-icon"></i> SQL</li>
+                </ul>
+            </div>
+            
+            <div class="skill-pod reveal-on-scroll">
+                <h3>Cloud & Web</h3>
+                <ul>
+                    <li><i class="fab fa-microsoft skill-icon"></i> Microsoft Azure</li>
+                    <li><i class="fab fa-aws skill-icon"></i> AWS & Google Cloud</li>
+                    <li><i class="fab fa-node-js skill-icon"></i> Node.js, HTML5, & CSS</li>
+                </ul>
+            </div>
+
+            <div class="skill-pod reveal-on-scroll">
+                <h3>Tools & Methodologies</h3>
+                <ul>
+                    <li><i class="fab fa-git-alt skill-icon"></i> Git & GitHub</li>
+                    <li><i class="fab fa-docker skill-icon"></i> Docker</li>
+                    <li><i class="fas fa-sync-alt skill-icon"></i> Agile & CI/CD</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script src="background.js"></script>
+</body>
+</html>

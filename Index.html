@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandu | AI Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="is-homepage">
+
+    <canvas id="particle-canvas"></canvas>
+    <div id="preloader">
+        <div class="preloader-container">
+            <div class="code-window" id="python-window">
+                <header><i class="fab fa-python"></i> agent.py</header>
+                <pre class="code-content"><code class="line" id="py-line1"><span class="c-keyword">class</span> <span class="c-class">PortfolioAgent</span>:</code><code class="line" id="py-line2">  <span class="c-keyword">def</span> <span class="c-function">__init__</span>(<span class="c-variable">self</span>):</code><code class="line" id="py-line3">    <span class="c-variable">self</span>.name = <span class="c-string">"Chandu"</span></code></pre>
+            </div>
+            <div class="code-window" id="js-window">
+                <header><i class="fab fa-js"></i> script.js</header>
+                <pre class="code-content"><code class="line" id="js-line1"><span class="c-keyword">const</span> <span class="c-variable">init</span> = () => {</code><code class="line" id="js-line2">  console.log(<span class="c-string">"Ready."</span>);</code><code class="line" id="js-line3">};</code></pre>
+            </div>
+            <div class="code-window" id="html-window">
+                <header><i class="fab fa-html5"></i> index.html</header>
+                <pre class="code-content"><code class="line" id="html-line1"><span class="c-tag">&lt;div</span> <span class="c-attr">class=</span><span class="c-string">"greeting"</span><span class="c-tag">&gt;</span></code><code class="line" id="html-line2">  Hey There! 👋</code><code class="line" id="html-line3"><span class="c-tag">&lt;/div&gt;</span></code></pre>
+            </div>
+            <div class="final-name">CHANDU</div>
+        </div>
+    </div>
+
+    <div class="background-shape shape1"></div>
+    <div class="background-shape shape2"></div>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">SDC.</a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="certificates.html" class="nav-link">Certificates</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn magnetic-element"><i class="fas fa-sun"></i></button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1 class="main-title gradient-text">AI Developer & Innovator</h1>
+        <div class="avatar-container reveal-on-scroll">
+            <h2 class="greeting">Hey, I'm Chandu 👋</h2>
+            <div class="glitch-wrapper"><img src="Images/avatar.png" alt="Avatar" class="avatar"></div>
+        </div>
+
+        <div class="chat-interface reveal-on-scroll">
+            <div id="answer-display" class="answer-display"></div>
+            <button id="questions-toggle-btn" class="questions-toggle"><span>Show quick questions</span><i class="fas fa-chevron-down"></i></button>
+            <div class="questions-list hidden">
+                <h3 class="questions-category"><i class="fas fa-user-circle"></i> Me</h3>
+                <button class="quick-question-btn" data-key="who-are-you">Who are you? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="passions">What are your passions? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="get-started-tech">How did you get started in tech? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="five-years">Where do you see yourself in 5 years? <i class="fas fa-chevron-right"></i></button>
+
+                <h3 class="questions-category"><i class="fas fa-briefcase"></i> Professional</h3>
+                <button class="quick-question-btn" data-key="why-hire-me">Why should I hire you? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="valuable-teammate">What makes you a valuable team member? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="see-resume">Can I see your resume? <i class="fas fa-chevron-right"></i></button>
+                
+                <h3 class="questions-category"><i class="fas fa-lightbulb"></i> Projects & Skills</h3>
+                <button class="quick-question-btn" data-key="proud-projects">What projects are you most proud of? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="see-skills">What are your skills? <i class="fas fa-chevron-right"></i></button>
+                
+                <h3 class="questions-category"><i class="fas fa-envelope"></i> Contact & Future</h3>
+                <button class="quick-question-btn" data-key="reach-you">How can I reach you? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="ideal-project">What kind of project would make you say 'yes' immediately? <i class="fas fa-chevron-right"></i></button>
+                <button class="quick-question-btn" data-key="location">Where are you located? <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <form id="query-form" class="query-form">
+                <input type="text" id="query-input" placeholder="Ask a question or select one above..."><button type="submit" class="submit-btn magnetic-element"><i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script src="background.js"></script>
+</body>
+</html>
