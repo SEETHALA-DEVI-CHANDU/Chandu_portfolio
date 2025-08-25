@@ -18,7 +18,27 @@
 
     <header class="header">
         <nav class="navbar">
-            <a href="index.html" class="nav-logo">SDC.</a>
+
+
+                        <!-- Hamburger Menu Button -->
+            <button id="hamburger-btn" class="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Sidebar Navigation -->
+            <div id="sidebar" class="sidebar">
+                <a href="about.html" class="sidebar-link">About</a>
+                <a href="experience.html" class="sidebar-link">Experience</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="skills.html" class="sidebar-link">Skills</a>
+                <a href="education.html" class="sidebar-link">Education</a>
+                <a href="certificates.html" class="sidebar-link">Certificates</a>
+                <a href="contact.html" class="sidebar-link">Contact</a>
+            </div>
+
+
+
+            <a href="index.html" class="nav-logo">Ask Me 🤖</a>
             <div class="nav-links">
                 <a href="about.html" class="nav-link">About</a>
                 <a href="experience.html" class="nav-link">Experience</a>
@@ -37,23 +57,32 @@
         <p class="contact-subtitle">Have a question or want to work together? Leave a message below, or find me on social media.</p>
         
         <div class="contact-layout">
-            <!-- Contact Form -->
+            <!-- Netlify Contact Form -->
             <div class="contact-form-container reveal-on-scroll">
                 <div class="form-wrapper">
-                    <h3>Send me a message</h3>
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="contact-name" name="name" required>
+                    <!-- The form-success message is hidden by default -->
+                    <div id="form-success-message" style="display: none;">
+                        <h3>Thank you!</h3>
+                        <p>Your message has been sent successfully. I'll get back to you soon.</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="contact-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="contact-message" name="message" rows="5" required></textarea>
-                    </div>
-                    <a href="#" id="send-email-btn" class="form-submit-btn">Send Message <i class="fas fa-paper-plane"></i></a>
+                    
+                    <form name="contact" id="contact-form" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <h3>Send me a message</h3>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
 

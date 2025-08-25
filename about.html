@@ -18,7 +18,28 @@
 
     <header class="header visible">
         <nav class="navbar">
-            <a href="index.html" class="nav-logo">SDC.</a>
+
+            <!-- Hamburger Menu Button -->
+            <button id="hamburger-btn" class="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Sidebar Navigation -->
+            <div id="sidebar" class="sidebar">
+                <a href="about.html" class="sidebar-link">About</a>
+                <a href="experience.html" class="sidebar-link">Experience</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="skills.html" class="sidebar-link">Skills</a>
+                <a href="education.html" class="sidebar-link">Education</a>
+                <a href="certificates.html" class="sidebar-link">Certificates</a>
+                <a href="contact.html" class="sidebar-link">Contact</a>
+            </div>
+
+
+
+
+
+            <a href="index.html" class="nav-logo">Ask Me 🤖</a>
             <div class="nav-links">
                 <a href="about.html" class="nav-link active">About</a>
                 <a href="experience.html" class="nav-link">Experience</a>
@@ -35,40 +56,122 @@
     </header>
 
     <main class="page-container visible">
-        <h1 class="page-title gradient-text">About Me</h1>
+        
+        <!-- New Profile Picture & Summary Section -->
+        <div class="about-hero reveal-on-scroll">
+            <img src="images/profile.jpg" alt="Seethala Devi Chandu" class="profile-picture">
+            <h1 class="page-title gradient-text">Multi-Agent AI Systems Architect</h1>
+            <p class="about-summary">
+                Results-driven AI specialist with expertise in architecting sophisticated multi-agent systems using LangChain and LangGraph. As a Computer Science graduate from SRM University (CGPA: 9.06/10), I combine strong technical foundations with an entrepreneurial vision, having co-founded a successful travel startup. My portfolio spans full-stack development, cloud architecture, and AI/ML implementation across 15+ professional projects.
+            </p>
+        </div>
+
+        <!-- Detailed Sections -->
         <div class="about-content">
             <div class="neural-card-wrapper reveal-on-scroll">
                 <div class="card">
-                    <h3><i class="fas fa-user-tie"></i> Professional Summary</h3>
-                    <p>Multi-Agent AI System Developer specializing in LangChain & LangGraph frameworks for Responsible AI compliance automation. I architect sophisticated multi-agent systems integrating Azure OpenAI & Llama LLMs to streamline RAI governance workflows.</p>
-                    <p>As a Computer Science and Engineering student at SRM University, I have a strong foundation in programming and engineering methods, complemented by practical experience through internships and a portfolio of web and AI projects.</p>
+                    <h3><i class="fas fa-building"></i> Corporate Certificates (Infosys)</h3>
+                    <ul class="certificate-list">
+                        <li><i class="fas fa-award"></i> Infosys Certified Responsible AI Practitioner</li>
+                        <li><i class="fas fa-award"></i> Infosys Certified Applied Generative AI Professional</li>
+                        <li><i class="fas fa-award"></i> Infosys Certified Python Associate</li>
+                        <li><i class="fas fa-award"></i> Infosys Certified Big Data Developer</li>
+                        <li><i class="fas fa-award"></i> Prompt Engineering and Responsible AI for Developers</li>
+                    </ul>
                 </div>
             </div>
-
             <div class="neural-card-wrapper reveal-on-scroll">
                 <div class="card">
-                    <h3><i class="fas fa-tasks"></i> Key Achievements & Impact</h3>
-                    <p>My work includes developing intelligent agents for automated impact assessment, compliance verification, and SOW validation. This has reduced manual compliance efforts by 80%, enhanced assessment accuracy, and streamlined questionnaire workflows from weeks to hours.</p>
+                    <h3><i class="fas fa-certificate"></i> External Certifications</h3>
+                    <ul class="certificate-list">
+                        <li><i class="fab fa-microsoft"></i> AI-102: Azure AI Solution (Microsoft)</li>
+                        <li><i class="fab fa-python"></i> MTA: Intro to Programming Using Python (Microsoft)</li>
+                        <li><i class="fab fa-google"></i> Google Generative AI Professional</li>
+                        <li><i class="fab fa-google"></i> Google Cloud Platform - Intermediate</li>
+                        <li><i class="fab fa-aws"></i> AWS Cloud Security Foundation</li>
+                        <li><i class="fas fa-shield-alt"></i> Network Security & Ethical Hacking</li>
+                        <li><i class="fas fa-atom"></i> Introduction to AI (IBM / Coursera)</li>
+                        <li><i class="fas fa-database"></i> Oracle Database Foundation</li>
+                        <li><i class="fas fa-search"></i> Data Mining (NPTEL)</li>
+                        <li><i class="fas fa-file-code"></i> Full Stack Developer (Skill Up)</li>
+                        <li><i class="fas fa-file-alt"></i> Letter of Recommendation in Web Development</li>
+                    </ul>
                 </div>
             </div>
-
             <div class="neural-card-wrapper reveal-on-scroll">
                 <div class="card">
-                     <h3><i class="fas fa-cogs"></i> Core Technologies</h3>
-                     <div class="skills-list" style="margin-top: 15px;">
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">LangGraph</span>
-                        <span class="skill-tag">Azure OpenAI</span>
-                        <span class="skill-tag">Llama</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Agentic AI</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">EU AI ACT</span>
-                     </div>
+                    <h3><i class="fas fa-trophy"></i> Competitions & Workshops</h3>
+                    <ul class="certificate-list">
+                        <li><i class="fas fa-laptop-code"></i> Smart India Hackathon Participant (2022)</li>
+                        <li><i class="fas fa-users"></i> Portfolio Development Workshop (Developer Student Club)</li>
+                        <li><i class="fas fa-cogs"></i> Machine Design Quiz Competition</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="neural-card-wrapper reveal-on-scroll">
+                <div class="card">
+                    <h3><i class="fas fa-rocket"></i> Extracurricular Activities</h3>
+                    <h4>Travelling StartUp</h4>
+                    <p>I co-founded a trailblazing startup redefining global travel experiences by curating budget-friendly, immersive itineraries. My role involved orchestrating seamless, personalized journeys and honed skills in strategic planning and customer-centric service.</p>
                 </div>
             </div>
         </div>
+
+        <div class="resume-section reveal-on-scroll">
+            <a href="resume/Resume_Final_for_SEETHALA_CHANDU.pdf" class="resume-download-btn" download>
+                <div class="btn-text">
+                    <h4>Tired of clicking around?</h4>
+                    <span>Download the full story (my resume)</span>
+                </div>
+                <div class="btn-icon">
+                    <i class="fas fa-file-arrow-down"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- New 3D Q&A Section -->
+        <div class="qa-section reveal-on-scroll">
+            <h2 class="section-title">Interview Questions & Answers</h2>
+            <div class="qa-grid">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h4>Where do you see yourself in 5 years?</h4></div>
+                        <div class="flip-card-back"><p>In five years, I envision myself as a successful AI startup founder, building innovative solutions that democratize artificial intelligence for businesses worldwide, while also expanding my travel startup into a comprehensive, AI-powered platform.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h4>What drives your passion for AI and entrepreneurship?</h4></div>
+                        <div class="flip-card-back"><p>My passion stems from seeing AI's real-world impact, like reducing compliance efforts by 80% at Infosys. Entrepreneurship allows me to channel this technical expertise into creating meaningful change at scale by solving genuine human problems.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h4>How do you balance technical depth and business strategy?</h4></div>
+                        <div class="flip-card-back"><p>I maintain strong technical foundations by architecting complex AI systems, while my startup experience has taught me customer-centric thinking and strategic planning, allowing me to align technical decisions with business objectives.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h4>What unique value do you bring?</h4></div>
+                        <div class="flip-card-back"><p>I offer a rare combination of deep technical expertise in cutting-edge AI and proven entrepreneurial execution. This dual perspective enables me to build solutions that are both technically sound and commercially viable.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h4>How do you stay updated with the AI landscape?</h4></div>
+                        <div class="flip-card-back"><p>I pursue certifications from Microsoft, Google, and AWS, engage with the developer community on GitHub, participate in hackathons, and follow AI research to understand both technical capabilities and business implications.</p></div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"><h4>Describe a challenging technical problem you solved.</h4></div>
+                        <div class="flip-card-back"><p>I architected a multi-agent system using LangChain to automate Responsible AI compliance. The solution reduced manual effort by 80% and transformed a weeks-long process into hours, creating significant business impact.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <script src="script.js"></script>

@@ -1,3 +1,27 @@
+    /* Always show hamburger menu on mobile */
+    .hamburger-btn {
+        display: none;
+    }
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        /* Keep default flex alignment: space-between */
+    }
+    .nav-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+    }
+    .hamburger-btn {
+        position: absolute;
+        left: 1.5rem;
+        top: 1rem;
+        z-index: 1001;
+        display: block !important;
+    }
+    /* No positioning for .settings-btn/theme-toggle-btn, let flexbox keep it on the right */
+}
 /* --- THEME VARIABLES --- */
 :root { --bg-color: #ffffff; --bg-secondary: #f0f2f5; --text-primary: #1c1e21; --text-secondary: #606770; --accent-color: #007bff; --border-color: #dddfe2; --shadow: 0 4px 20px rgba(0, 0, 0, 0.08); --gradient-1: linear-gradient(45deg, #007bff, #38BDF8); }
 body.dark-theme { --bg-color: #121212; --bg-secondary: #1e1e1e; --text-primary: #e0e0e0; --text-secondary: #a0a0a0; --accent-color: #38BDF8; --border-color: #333333; --shadow: 0 4px 20px rgba(0, 0, 0, 0.2); --gradient-1: linear-gradient(45deg, #38BDF8, #007bff); }
@@ -246,3 +270,437 @@ body:not(.dark-theme) .neural-card-wrapper:hover .card {
     from { background-position: 0 0; }
     to { background-position: -30px -30px; }
 }
+
+/* --- 3D FLIPPING Q&A CARDS --- */
+.qa-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+}
+
+.qa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 220px;
+    perspective: 1000px; /* Needed for 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.flip-card-front {
+    background: var(--bg-secondary);
+}
+
+.flip-card-front h4 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.flip-card-back {
+    background: var(--gradient-1);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 300px;
+    border-radius: 16px;
+    border: 5px solid var(--bg-secondary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    /* Add these two lines to center the image */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* --- MOBILE NAVIGATION (HAMBURGER MENU) --- */
+.hamburger-btn {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001; /* Above the header */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px; /* Start off-screen */
+    width: 250px;
+    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Ensure it always fills the page */
+    background: linear-gradient(135deg, 
+        rgba(76, 175, 80, 0.1) 0%,
+        rgba(33, 150, 243, 0.1) 25%,
+        rgba(156, 39, 176, 0.1) 50%,
+        rgba(255, 193, 7, 0.1) 75%,
+        rgba(244, 67, 54, 0.1) 100%
+    );
+    backdrop-filter: blur(20px) saturate(1.5);
+    padding-top: 80px; /* Keep if you want links below header, set to 0 for flush top */
+    z-index: 1100; /* Ensure above header */
+    transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+    overflow-x: hidden; /* Only hide horizontal overflow */
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .sidebar {
+    background: linear-gradient(135deg, 
+        rgba(0, 150, 136, 0.15) 0%,
+        rgba(63, 81, 181, 0.15) 25%,
+        rgba(233, 30, 99, 0.15) 50%,
+        rgba(255, 152, 0, 0.15) 75%,
+        rgba(121, 85, 72, 0.15) 100%
+    );
+    backdrop-filter: blur(25px) saturate(1.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dynamic Aurora Wave Animation */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(76, 175, 80, 0.2) 40%,
+        rgba(33, 150, 243, 0.2) 50%,
+        rgba(156, 39, 176, 0.2) 60%,
+        transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: aurora-wave 8s ease-in-out infinite;
+}
+
+/* Floating Particles Effect */
+.sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    animation: floating-particles 12s linear infinite;
+}
+
+body.dark-theme .sidebar::before {
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(0, 150, 136, 0.3) 40%,
+        rgba(63, 81, 181, 0.3) 50%,
+        rgba(233, 30, 99, 0.3) 60%,
+        transparent 70%
+    );
+}
+
+body.dark-theme .sidebar::after {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(0, 229, 255, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 20, 147, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(138, 43, 226, 0.4) 0%, transparent 50%);
+}
+
+/* Aurora Wave Animation */
+@keyframes aurora-wave {
+    0% {
+        background-position: 0% 0%;
+        transform: rotate(0deg);
+    }
+    25% {
+        background-position: 100% 0%;
+        transform: rotate(1deg);
+    }
+    50% {
+        background-position: 100% 100%;
+        transform: rotate(0deg);
+    }
+    75% {
+        background-position: 0% 100%;
+        transform: rotate(-1deg);
+    }
+    100% {
+        background-position: 0% 0%;
+        transform: rotate(0deg);
+    }
+}
+
+/* Floating Particles Animation */
+@keyframes floating-particles {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+    33% {
+        transform: translateY(-10px) rotate(120deg);
+        opacity: 0.8;
+    }
+    66% {
+        transform: translateY(5px) rotate(240deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.sidebar.open {
+    left: 0; /* Slide in */
+    box-shadow: 5px 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-link {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 10;
+    border-radius: 8px;
+    margin: 0 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Glassmorphism effect for links */
+.sidebar-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.sidebar-link:hover::before {
+    opacity: 1;
+}
+
+/* ADDED: More specific rule to ensure text is visible in dark mode */
+body.dark-theme .sidebar-link {
+    color: #e0e0e0; 
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: linear-gradient(135deg, 
+        rgba(var(--accent-color-rgb), 0.8) 0%, 
+        rgba(var(--accent-color-rgb), 0.6) 100%
+    );
+    color: white !important;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(var(--accent-color-rgb), 0.3);
+}
+
+/* --- Responsive adjustments for Mobile --- */
+@media (max-width: 768px) {
+
+    /* 1. PUSH THE MAIN CONTENT DOWN */
+    body {
+        padding-top: 5rem; /* Adjust this value as needed */
+    }
+
+    /* Hide desktop-only navigation */
+    .nav-links {
+        display: none;
+    }
+
+    /* 2. POSITION THE HAMBURGER ON THE LEFT */
+    .hamburger-btn {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%); /* Perfect vertical centering */
+    }
+
+    /* THEME TOGGLE - RIGHT SIDE */
+    .theme-toggle {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%); /* Perfect vertical centering */
+    }
+
+    .hamburger-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
+
+
+    /* Hide theme toggle and settings button on mobile */
+    .theme-toggle,
+    .theme-toggle-btn,
+    .settings-btn {
+        display: none !important;
+    }
+
+    /* Dark theme adjustments for mobile buttons */
+    body.dark-theme .hamburger-btn,
+    body.dark-theme .settings-btn {
+        background: rgba(0, 0, 0, 0.3);
+        color: #e0e0e0;
+    }
+
+    body.dark-theme .hamburger-btn:hover,
+    body.dark-theme .settings-btn:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Ensure header content is properly spaced */
+    .header-content {
+    position: relative; /* This is crucial */
+    justify-content: center;
+    padding: 0;
+    }
+}
+
+
+/* --- RESUME DOWNLOAD BUTTON --- */
+.resume-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 25px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-download-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+.resume-download-btn .btn-text {
+    text-align: left;
+}
+
+.resume-download-btn h4 {
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.resume-download-btn span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.resume-download-btn .btn-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.resume-download-btn:hover .btn-icon {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+/* --- ABOUT PAGE SPACING ENHANCEMENTS --- */
+
+/* Increases the vertical space between lines in the main summary */
+.about-summary {
+    line-height: 1.7;
+}
+
+/* Increases the gap between each card in the grid */
+.about-content {
+    gap: 30px; /* This increases space BETWEEN cards */
+}
+
+/* Increases the internal padding inside all cards */
+.card {
+    padding: 30px;
+    margin : 20px;
+}
+
+/* FIX: Adds space between the card header and the content below it */
+.card h3 {
+    margin-bottom: 25px;
+}
+
+/* Increases the vertical space between each certificate list item */
+.certificate-list li {
+    margin-bottom: 15px;
+}
+

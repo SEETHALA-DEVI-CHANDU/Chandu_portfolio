@@ -193,3 +193,13 @@ if (sendEmailBtn) {
         window.location.href = `mailto:seethalachandu2003@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 }
+
+// --- MOBILE NAVIGATION (SIDEBAR) ---
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const sidebar = document.getElementById('sidebar');
+
+hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevents event conflicts
+    sidebar.classList.toggle('open');
+    hamburgerBtn.textContent = sidebar.classList.contains('open') ? '✕' : '☰';
+});
