@@ -704,3 +704,76 @@ body.dark-theme .sidebar-link {
     margin-bottom: 15px;
 }
 
+/* --- PUBLICATIONS SECTION --- */
+.publications-section {
+    margin-top: 60px;
+}
+
+.publication-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.publication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    cursor: pointer;
+}
+
+.publication-header h4 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.publication-toggle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.publication-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), padding 0.5s ease;
+    padding: 0 25px;
+}
+
+.publication-body p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.publication-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.publication-meta a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.publication-meta a i {
+    margin-left: 5px;
+}
+
+/* Active state for the accordion */
+.publication-card.active .publication-toggle {
+    transform: rotate(45deg);
+}
+
+.publication-card.active .publication-body {
+    max-height: 1000px; /* Large enough to fit content */
+    padding: 0 25px 25px 25px;
+}
