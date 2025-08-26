@@ -202,4 +202,15 @@ hamburgerBtn.addEventListener('click', (e) => {
     e.stopPropagation(); // Prevents event conflicts
     sidebar.classList.toggle('open');
     hamburgerBtn.textContent = sidebar.classList.contains('open') ? '✕' : '☰';
+
+});
+
+
+// --- PUBLICATION ACCORDION LOGIC ---
+const publicationHeaders = document.querySelectorAll('.publication-header');
+publicationHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const card = header.parentElement;
+        card.classList.toggle('active');
+    });
 });
